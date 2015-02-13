@@ -17,15 +17,25 @@ int main(int argc, char** argv) {
     rRicorsivo = moltiplicazioneRicorsiva(a, b);
     
     printf("%d * %d = %d (formulazione iterativa)\n", a, b, rIterativo);
-    printf("%d * %d = %d (formulazione iterativa)\n", a, b, rRicorsivo);
+    printf("%d * %d = %d (formulazione ricorsiva)\n", a, b, rRicorsivo);
     return (EXIT_SUCCESS);
 }
 
 int moltiplicazioneIterativa(int a, int b) {
-    // TODO Implementa il corpo della funzione
-    return -1;
+    int risultato,i;
+    
+    for(i=0;i<b;i++) {
+        risultato += a;
+    }
+    
+    return risultato;
 }
 int moltiplicazioneRicorsiva(int a, int b) {
-    // TODO Implementa il corpo della funzione
-    return -1;
+    int risultato = 0;
+    
+    if(b!=0) {
+        risultato = a + moltiplicazioneRicorsiva(a,b-1);
+    }else {
+        return risultato;
+    }
 }
